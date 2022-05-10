@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>licenseware.uploader_encryptor.uploader_encryptor API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>licenseware.uploader_encryptor.uploader_encryptor</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import re
+import shutil
+from typing import List, Dict
+import pandas as pd
+from licenseware.utils.aes import AESCipher
+from licenseware.common.constants import envs
+
+
+class UploaderEncryptor:
+
+    &#34;&#34;&#34;
+
+    This class will use AES encryption algorithm to encrypt files given.
+    Each parameter receives either a simple string which will be encrypted or a regex string.
+
+    The regex string needs to be grouped: 
+    Ex: 
+    ```
+        Input: &#34;/Collection-deviceName&#34;
+        filepaths: [&#34;Collection-(.+?)&#34;] will return this: &#34;/Collection-iGSS0a9GfPDJ24ni3vfmRSrPIYdY3kFj4-EsRjfz9E0=&#34;
+    ```
+
+    Params:
+
+    filepaths = [&#34;Collection-(.+?)&#34;, &#34;DeviceName&#34;] # this will encrypt the filepath including the filename
+    filecontent = [&#34;ODBName(.+?)&#34;] # encrypt text found with regex from file content (csv, txt, xml) replace all
+    columns = [&#34;OS&#34;, &#34;IP&#34;] # encrypt the entire column data where the specified columns are found (csv, excel with multiple sheets)
+    encryption_password = &#34;secret password&#34; # the password that will be used for encrypting and decrypting data
+    You can also set password later with `set_password(&#34;password&#34;)`
+
+    Usage:
+
+    ```py
+
+    from licenseware.uploader_encryptor import UploaderEncrytor
+
+    filepaths = [
+        &#34;test_files/RVTools.xlsx&#34;,
+        &#34;test_files/LMS_OPTIONS_SECRET.csv&#34;,
+        &#34;test_files/cpuq.txt&#34;,
+        &#34;test_files/rl/deviceName_database_version.csv&#34;,
+        &#34;test_files/rl/deviceName_database_options.csv&#34;,
+        &#34;test_files/rl/deviceName_database_dba_feature.csv&#34;,
+    ]
+
+    ue = UploaderEncryptor(
+        filepaths=[&#34;deviceName&#34;, &#34;database&#34;, &#34;LMS_OPTIONS_(.*?).csv&#34;, &#34;rl&#34;],
+        filecontent=[&#34;Machine Name=(.+)&#34;, &#34;System IP Address 1=(.+)&#34;],
+        columns=[&#34;DB_NAME&#34;, &#34;MACHINE_ID&#34;, &#34;HOST_NAME&#34;, &#34;INSTANCE_NAME&#34;, &#34;Host&#34;, &#34;Device&#34;]
+    )
+
+    ue.set_password(&#34;password&#34;)
+
+    # Encrypt
+    encrypted_filepaths = ue.get_encrypted_filepaths(filepaths)
+
+    # Decrypt
+    decrypted_filepaths = ue.get_decrypted_filepaths(encrypted_filepaths)
+
+    ```
+
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        filepaths: List[str] = None,
+        filecontent: List[str] = None,
+        columns: List[str] = None,
+        encryption_password: str = None
+    ):
+
+        self.filepaths = filepaths or []
+        self.filecontent = filecontent or []
+        self.columns = columns or []
+        self.encryption_password = encryption_password or &#34;password&#34;
+        self.encryption_parameters = self.get_encryption_parameters()
+        self.start_tag = &#34;#sc#&#34;
+        self.end_tag = &#34;#ec#&#34;
+        self.store = None
+        
+
+    def set_password(self, password: str):
+        self.encryption_password = password
+
+    def add_tags(self, value: str):
+        return self.start_tag + value  + self.end_tag
+
+    def rem_tags(self, value: str):
+        no_tags_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), value)
+        return no_tags_values
+
+    def encrypt(self, value:str):
+        return self.add_tags(AESCipher(self.encryption_password).encrypt(str(value)))
+
+    def decrypt(self, encrypted_value:str):   
+        
+        if not isinstance(encrypted_value, str): 
+            return encrypted_value
+        
+        if encrypted_value.startswith(self.start_tag) and encrypted_value.endswith(self.end_tag):
+            encrypted_value = self.rem_tags(encrypted_value)[0]
+        if not encrypted_value.endswith(&#34;=&#34;):
+            encrypted_value = encrypted_value + &#34;=&#34;
+        
+        return AESCipher(self.encryption_password).decrypt(encrypted_value)
+
+    def get_encryption_parameters(self):
+        return dict(
+            filepaths = self.filepaths,
+            filecontent = self.filecontent,
+            columns = self.columns
+        )
+
+    def encrypt_filepath(self, filepath: str):
+
+        if self.store is None: 
+            self.store = {}
+
+        encfp = filepath
+        for regexpr in self.filepaths:
+            values_to_encrypt = set(re.findall(re.compile(regexpr), encfp))            
+            for val in values_to_encrypt:
+                
+                if val not in self.store:
+
+                    encrypted = self.encrypt(val)
+                    encfp = encfp.replace(val, encrypted)
+
+                    self.store[val] = {
+                        &#39;regexpr&#39;: regexpr,
+                        &#39;not_encrypted&#39;: val,
+                        &#39;encrypted&#39;: encrypted
+                    }
+
+                else:
+                    encfp = encfp.replace(val,  self.store[val][&#39;encrypted&#39;])
+
+        return encfp
+
+    def decrypt_filepath(self, filepath: str):
+
+        enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), filepath)
+
+        encdec = {}
+        for encval in enc_values:
+            encdec[self.add_tags(encval)] = self.decrypt(encval)
+            
+        decfp = filepath
+        for enc, dec in encdec.items():
+            decfp = decfp.replace(enc, dec)
+
+        return decfp
+
+    def mirror_dirs(self, filepaths_dict: Dict[str, str], enctype: str) -&gt; List[str]:
+
+        assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+        processed_filepaths = []
+        for sourcepath, destinationpath in filepaths_dict.items():
+
+            dstdir = os.path.join(envs.FILE_UPLOAD_PATH, f&#34;{enctype}ed&#34;)
+
+            dstpathli = [dstdir] + destinationpath.replace(envs.FILE_UPLOAD_PATH, &#34;&#34;).split(os.path.sep)[1:]
+            dstpath = os.path.join(*dstpathli)
+
+            root_path = os.path.dirname(dstpath)
+            if not os.path.exists(root_path):
+                os.makedirs(root_path)
+
+            shutil.copy2(sourcepath, dstpath)
+            processed_filepaths.append(dstpath)
+
+        return processed_filepaths
+
+
+    def get_src_dst_files(self, filepaths: List[str], enctype: str):
+
+        assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+        self.store = {}
+
+        encdecfunc = lambda fp: self.encrypt_filepath(fp) if enctype == &#34;encrypt&#34; else self.decrypt_filepath(fp)
+
+        filepaths_dict = {}
+        for fp in filepaths:
+            if not os.path.exists(fp): continue
+            filepaths_dict[fp] = encdecfunc(fp)
+
+        self.store = None
+
+        return filepaths_dict
+
+
+    def get_encrypted_filepaths(self, filepaths: List[str]):
+
+        encrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;encrypt&#39;)
+        encrypted_filepaths_list = self.mirror_dirs(encrypted_filepaths_dict, &#39;encrypt&#39;)
+        self.encrypt_filecontent(encrypted_filepaths_list)
+
+        return encrypted_filepaths_list
+
+
+    def get_decrypted_filepaths(self, filepaths: List[str]):
+
+        decrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;decrypt&#39;)
+        decrypted_filepaths_list = self.mirror_dirs(decrypted_filepaths_dict, &#39;decrypt&#39;)
+        self.decrypt_filecontent(decrypted_filepaths_list)
+
+        return decrypted_filepaths_list
+
+
+    def encrypt_non_excel_filecontent(self, filepath: str):
+
+        with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            content = f.read()
+
+        to_encrypt_values = set()
+        for regexp in self.filecontent:
+            matches = re.findall(re.compile(regexp), content)
+            if not matches: continue
+            to_encrypt_values.add(*matches)
+            
+        encryption_dict = {}
+        for tev in to_encrypt_values:
+            encryption_dict[tev] = self.encrypt(tev)
+
+        for val, encval in encryption_dict.items():
+            content = re.sub(val, encval, content)
+
+        with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            f.write(content)
+
+        return content
+
+
+    def decrypt_non_excel_filecontent(self, filepath: str):
+
+        with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            content = f.read()
+
+        enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), content)
+
+        encdec = {}
+        for encval in enc_values:
+            encdec[self.add_tags(encval)] = self.decrypt(encval)
+
+        for encval, val in encdec.items():
+            content = re.sub(encval, val, content)
+
+        with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            f.write(content)
+
+        return content
+
+    def decrypt_excel_filecontent(self, filepath: str):
+
+        decrypted_dfs = {}
+        excel = pd.ExcelFile(filepath)
+        for sheet_name in excel.sheet_names:
+            
+            df = pd.read_excel(excel, sheet_name) 
+            
+            for col in self.columns:
+                if col not in df.columns: continue
+                
+                decryption_dict = {}
+                for val in df[col].unique():
+                    decryption_dict[val] = self.decrypt(val)
+                    
+                df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+            decrypted_dfs[sheet_name] = df
+
+        writer = pd.ExcelWriter(filepath)
+        for name, df in decrypted_dfs.items():
+            df.to_excel(writer, sheet_name=name, index=False)
+        writer.save()
+        writer.close()
+
+        return filepath
+
+    def decrypt_csv_filecontent(self, filepath: str):
+
+        # TODO - handle big csv&#39;s
+        df = pd.read_csv(filepath) 
+
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            decryption_dict = {}
+            for val in df[col].unique():
+                decryption_dict[val] = self.decrypt(val)
+                
+            df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+        df.to_csv(filepath, index=False)
+
+        return filepath
+
+
+    def encrypt_excel_filecontent(self, filepath: str):
+
+        encrypted_dfs = {}
+        excel = pd.ExcelFile(filepath)
+        for sheet_name in excel.sheet_names:
+            
+            df = pd.read_excel(excel, sheet_name) 
+            
+            for col in self.columns:
+                if col not in df.columns: continue
+                
+                encryption_dict = {}
+                for val in df[col].unique():
+                    encryption_dict[val] = self.encrypt(val)
+
+                df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+            encrypted_dfs[sheet_name] = df
+
+        writer = pd.ExcelWriter(filepath)
+        for name, df in encrypted_dfs.items():
+            df.to_excel(writer, sheet_name=name, index=False)
+        writer.save()
+        writer.close()
+
+        return filepath
+
+
+    def encrypt_csv_filecontent(self,  filepath: str):
+        
+        # TODO - handle big csv&#39;s
+        df = pd.read_csv(filepath) 
+
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            encryption_dict = {}
+            for val in df[col].unique():
+                encryption_dict[val] = self.encrypt(val)
+                
+            df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+        df.to_csv(filepath, index=False)
+
+        return filepath
+
+
+
+    def encrypt_filecontent(self, filepaths: List[str]):
+
+        for fp in filepaths:
+            if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+                self.encrypt_non_excel_filecontent(fp)
+            elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+                self.encrypt_excel_filecontent(fp)
+            elif fp.endswith(&#39;.csv&#39;) and self.columns:
+                self.encrypt_csv_filecontent(fp)
+
+        return filepaths
+
+
+            
+    def decrypt_filecontent(self, filepaths: List[str]):
+
+        for fp in filepaths:
+            if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+                self.decrypt_non_excel_filecontent(fp)
+            elif fp.endswith(&#39;.csv&#39;) and self.columns:
+                self.decrypt_csv_filecontent(fp)
+            elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+                self.decrypt_excel_filecontent(fp)
+
+        return filepaths</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor"><code class="flex name class">
+<span>class <span class="ident">UploaderEncryptor</span></span>
+<span>(</span><span>filepaths: List[str] = None, filecontent: List[str] = None, columns: List[str] = None, encryption_password: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class will use AES encryption algorithm to encrypt files given.
+Each parameter receives either a simple string which will be encrypted or a regex string.</p>
+<p>The regex string needs to be grouped:
+Ex: </p>
+<pre><code>    Input: &quot;/Collection-deviceName&quot;
+    filepaths: [&quot;Collection-(.+?)&quot;] will return this: &quot;/Collection-iGSS0a9GfPDJ24ni3vfmRSrPIYdY3kFj4-EsRjfz9E0=&quot;
+</code></pre>
+<p>Params:</p>
+<p>filepaths = ["Collection-(.+?)", "DeviceName"] # this will encrypt the filepath including the filename
+filecontent = ["ODBName(.+?)"] # encrypt text found with regex from file content (csv, txt, xml) replace all
+columns = ["OS", "IP"] # encrypt the entire column data where the specified columns are found (csv, excel with multiple sheets)
+encryption_password = "secret password" # the password that will be used for encrypting and decrypting data
+You can also set password later with <code>set_password("password")</code></p>
+<p>Usage:</p>
+<pre><code class="language-py">
+from licenseware.uploader_encryptor import UploaderEncrytor
+
+filepaths = [
+    &quot;test_files/RVTools.xlsx&quot;,
+    &quot;test_files/LMS_OPTIONS_SECRET.csv&quot;,
+    &quot;test_files/cpuq.txt&quot;,
+    &quot;test_files/rl/deviceName_database_version.csv&quot;,
+    &quot;test_files/rl/deviceName_database_options.csv&quot;,
+    &quot;test_files/rl/deviceName_database_dba_feature.csv&quot;,
+]
+
+ue = UploaderEncryptor(
+    filepaths=[&quot;deviceName&quot;, &quot;database&quot;, &quot;LMS_OPTIONS_(.*?).csv&quot;, &quot;rl&quot;],
+    filecontent=[&quot;Machine Name=(.+)&quot;, &quot;System IP Address 1=(.+)&quot;],
+    columns=[&quot;DB_NAME&quot;, &quot;MACHINE_ID&quot;, &quot;HOST_NAME&quot;, &quot;INSTANCE_NAME&quot;, &quot;Host&quot;, &quot;Device&quot;]
+)
+
+ue.set_password(&quot;password&quot;)
+
+# Encrypt
+encrypted_filepaths = ue.get_encrypted_filepaths(filepaths)
+
+# Decrypt
+decrypted_filepaths = ue.get_decrypted_filepaths(encrypted_filepaths)
+
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UploaderEncryptor:
+
+    &#34;&#34;&#34;
+
+    This class will use AES encryption algorithm to encrypt files given.
+    Each parameter receives either a simple string which will be encrypted or a regex string.
+
+    The regex string needs to be grouped: 
+    Ex: 
+    ```
+        Input: &#34;/Collection-deviceName&#34;
+        filepaths: [&#34;Collection-(.+?)&#34;] will return this: &#34;/Collection-iGSS0a9GfPDJ24ni3vfmRSrPIYdY3kFj4-EsRjfz9E0=&#34;
+    ```
+
+    Params:
+
+    filepaths = [&#34;Collection-(.+?)&#34;, &#34;DeviceName&#34;] # this will encrypt the filepath including the filename
+    filecontent = [&#34;ODBName(.+?)&#34;] # encrypt text found with regex from file content (csv, txt, xml) replace all
+    columns = [&#34;OS&#34;, &#34;IP&#34;] # encrypt the entire column data where the specified columns are found (csv, excel with multiple sheets)
+    encryption_password = &#34;secret password&#34; # the password that will be used for encrypting and decrypting data
+    You can also set password later with `set_password(&#34;password&#34;)`
+
+    Usage:
+
+    ```py
+
+    from licenseware.uploader_encryptor import UploaderEncrytor
+
+    filepaths = [
+        &#34;test_files/RVTools.xlsx&#34;,
+        &#34;test_files/LMS_OPTIONS_SECRET.csv&#34;,
+        &#34;test_files/cpuq.txt&#34;,
+        &#34;test_files/rl/deviceName_database_version.csv&#34;,
+        &#34;test_files/rl/deviceName_database_options.csv&#34;,
+        &#34;test_files/rl/deviceName_database_dba_feature.csv&#34;,
+    ]
+
+    ue = UploaderEncryptor(
+        filepaths=[&#34;deviceName&#34;, &#34;database&#34;, &#34;LMS_OPTIONS_(.*?).csv&#34;, &#34;rl&#34;],
+        filecontent=[&#34;Machine Name=(.+)&#34;, &#34;System IP Address 1=(.+)&#34;],
+        columns=[&#34;DB_NAME&#34;, &#34;MACHINE_ID&#34;, &#34;HOST_NAME&#34;, &#34;INSTANCE_NAME&#34;, &#34;Host&#34;, &#34;Device&#34;]
+    )
+
+    ue.set_password(&#34;password&#34;)
+
+    # Encrypt
+    encrypted_filepaths = ue.get_encrypted_filepaths(filepaths)
+
+    # Decrypt
+    decrypted_filepaths = ue.get_decrypted_filepaths(encrypted_filepaths)
+
+    ```
+
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        filepaths: List[str] = None,
+        filecontent: List[str] = None,
+        columns: List[str] = None,
+        encryption_password: str = None
+    ):
+
+        self.filepaths = filepaths or []
+        self.filecontent = filecontent or []
+        self.columns = columns or []
+        self.encryption_password = encryption_password or &#34;password&#34;
+        self.encryption_parameters = self.get_encryption_parameters()
+        self.start_tag = &#34;#sc#&#34;
+        self.end_tag = &#34;#ec#&#34;
+        self.store = None
+        
+
+    def set_password(self, password: str):
+        self.encryption_password = password
+
+    def add_tags(self, value: str):
+        return self.start_tag + value  + self.end_tag
+
+    def rem_tags(self, value: str):
+        no_tags_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), value)
+        return no_tags_values
+
+    def encrypt(self, value:str):
+        return self.add_tags(AESCipher(self.encryption_password).encrypt(str(value)))
+
+    def decrypt(self, encrypted_value:str):   
+        
+        if not isinstance(encrypted_value, str): 
+            return encrypted_value
+        
+        if encrypted_value.startswith(self.start_tag) and encrypted_value.endswith(self.end_tag):
+            encrypted_value = self.rem_tags(encrypted_value)[0]
+        if not encrypted_value.endswith(&#34;=&#34;):
+            encrypted_value = encrypted_value + &#34;=&#34;
+        
+        return AESCipher(self.encryption_password).decrypt(encrypted_value)
+
+    def get_encryption_parameters(self):
+        return dict(
+            filepaths = self.filepaths,
+            filecontent = self.filecontent,
+            columns = self.columns
+        )
+
+    def encrypt_filepath(self, filepath: str):
+
+        if self.store is None: 
+            self.store = {}
+
+        encfp = filepath
+        for regexpr in self.filepaths:
+            values_to_encrypt = set(re.findall(re.compile(regexpr), encfp))            
+            for val in values_to_encrypt:
+                
+                if val not in self.store:
+
+                    encrypted = self.encrypt(val)
+                    encfp = encfp.replace(val, encrypted)
+
+                    self.store[val] = {
+                        &#39;regexpr&#39;: regexpr,
+                        &#39;not_encrypted&#39;: val,
+                        &#39;encrypted&#39;: encrypted
+                    }
+
+                else:
+                    encfp = encfp.replace(val,  self.store[val][&#39;encrypted&#39;])
+
+        return encfp
+
+    def decrypt_filepath(self, filepath: str):
+
+        enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), filepath)
+
+        encdec = {}
+        for encval in enc_values:
+            encdec[self.add_tags(encval)] = self.decrypt(encval)
+            
+        decfp = filepath
+        for enc, dec in encdec.items():
+            decfp = decfp.replace(enc, dec)
+
+        return decfp
+
+    def mirror_dirs(self, filepaths_dict: Dict[str, str], enctype: str) -&gt; List[str]:
+
+        assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+        processed_filepaths = []
+        for sourcepath, destinationpath in filepaths_dict.items():
+
+            dstdir = os.path.join(envs.FILE_UPLOAD_PATH, f&#34;{enctype}ed&#34;)
+
+            dstpathli = [dstdir] + destinationpath.replace(envs.FILE_UPLOAD_PATH, &#34;&#34;).split(os.path.sep)[1:]
+            dstpath = os.path.join(*dstpathli)
+
+            root_path = os.path.dirname(dstpath)
+            if not os.path.exists(root_path):
+                os.makedirs(root_path)
+
+            shutil.copy2(sourcepath, dstpath)
+            processed_filepaths.append(dstpath)
+
+        return processed_filepaths
+
+
+    def get_src_dst_files(self, filepaths: List[str], enctype: str):
+
+        assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+        self.store = {}
+
+        encdecfunc = lambda fp: self.encrypt_filepath(fp) if enctype == &#34;encrypt&#34; else self.decrypt_filepath(fp)
+
+        filepaths_dict = {}
+        for fp in filepaths:
+            if not os.path.exists(fp): continue
+            filepaths_dict[fp] = encdecfunc(fp)
+
+        self.store = None
+
+        return filepaths_dict
+
+
+    def get_encrypted_filepaths(self, filepaths: List[str]):
+
+        encrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;encrypt&#39;)
+        encrypted_filepaths_list = self.mirror_dirs(encrypted_filepaths_dict, &#39;encrypt&#39;)
+        self.encrypt_filecontent(encrypted_filepaths_list)
+
+        return encrypted_filepaths_list
+
+
+    def get_decrypted_filepaths(self, filepaths: List[str]):
+
+        decrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;decrypt&#39;)
+        decrypted_filepaths_list = self.mirror_dirs(decrypted_filepaths_dict, &#39;decrypt&#39;)
+        self.decrypt_filecontent(decrypted_filepaths_list)
+
+        return decrypted_filepaths_list
+
+
+    def encrypt_non_excel_filecontent(self, filepath: str):
+
+        with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            content = f.read()
+
+        to_encrypt_values = set()
+        for regexp in self.filecontent:
+            matches = re.findall(re.compile(regexp), content)
+            if not matches: continue
+            to_encrypt_values.add(*matches)
+            
+        encryption_dict = {}
+        for tev in to_encrypt_values:
+            encryption_dict[tev] = self.encrypt(tev)
+
+        for val, encval in encryption_dict.items():
+            content = re.sub(val, encval, content)
+
+        with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            f.write(content)
+
+        return content
+
+
+    def decrypt_non_excel_filecontent(self, filepath: str):
+
+        with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            content = f.read()
+
+        enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), content)
+
+        encdec = {}
+        for encval in enc_values:
+            encdec[self.add_tags(encval)] = self.decrypt(encval)
+
+        for encval, val in encdec.items():
+            content = re.sub(encval, val, content)
+
+        with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+            f.write(content)
+
+        return content
+
+    def decrypt_excel_filecontent(self, filepath: str):
+
+        decrypted_dfs = {}
+        excel = pd.ExcelFile(filepath)
+        for sheet_name in excel.sheet_names:
+            
+            df = pd.read_excel(excel, sheet_name) 
+            
+            for col in self.columns:
+                if col not in df.columns: continue
+                
+                decryption_dict = {}
+                for val in df[col].unique():
+                    decryption_dict[val] = self.decrypt(val)
+                    
+                df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+            decrypted_dfs[sheet_name] = df
+
+        writer = pd.ExcelWriter(filepath)
+        for name, df in decrypted_dfs.items():
+            df.to_excel(writer, sheet_name=name, index=False)
+        writer.save()
+        writer.close()
+
+        return filepath
+
+    def decrypt_csv_filecontent(self, filepath: str):
+
+        # TODO - handle big csv&#39;s
+        df = pd.read_csv(filepath) 
+
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            decryption_dict = {}
+            for val in df[col].unique():
+                decryption_dict[val] = self.decrypt(val)
+                
+            df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+        df.to_csv(filepath, index=False)
+
+        return filepath
+
+
+    def encrypt_excel_filecontent(self, filepath: str):
+
+        encrypted_dfs = {}
+        excel = pd.ExcelFile(filepath)
+        for sheet_name in excel.sheet_names:
+            
+            df = pd.read_excel(excel, sheet_name) 
+            
+            for col in self.columns:
+                if col not in df.columns: continue
+                
+                encryption_dict = {}
+                for val in df[col].unique():
+                    encryption_dict[val] = self.encrypt(val)
+
+                df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+            encrypted_dfs[sheet_name] = df
+
+        writer = pd.ExcelWriter(filepath)
+        for name, df in encrypted_dfs.items():
+            df.to_excel(writer, sheet_name=name, index=False)
+        writer.save()
+        writer.close()
+
+        return filepath
+
+
+    def encrypt_csv_filecontent(self,  filepath: str):
+        
+        # TODO - handle big csv&#39;s
+        df = pd.read_csv(filepath) 
+
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            encryption_dict = {}
+            for val in df[col].unique():
+                encryption_dict[val] = self.encrypt(val)
+                
+            df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+        df.to_csv(filepath, index=False)
+
+        return filepath
+
+
+
+    def encrypt_filecontent(self, filepaths: List[str]):
+
+        for fp in filepaths:
+            if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+                self.encrypt_non_excel_filecontent(fp)
+            elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+                self.encrypt_excel_filecontent(fp)
+            elif fp.endswith(&#39;.csv&#39;) and self.columns:
+                self.encrypt_csv_filecontent(fp)
+
+        return filepaths
+
+
+            
+    def decrypt_filecontent(self, filepaths: List[str]):
+
+        for fp in filepaths:
+            if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+                self.decrypt_non_excel_filecontent(fp)
+            elif fp.endswith(&#39;.csv&#39;) and self.columns:
+                self.decrypt_csv_filecontent(fp)
+            elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+                self.decrypt_excel_filecontent(fp)
+
+        return filepaths</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.add_tags"><code class="name flex">
+<span>def <span class="ident">add_tags</span></span>(<span>self, value: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def add_tags(self, value: str):
+    return self.start_tag + value  + self.end_tag</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt"><code class="name flex">
+<span>def <span class="ident">decrypt</span></span>(<span>self, encrypted_value: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt(self, encrypted_value:str):   
+    
+    if not isinstance(encrypted_value, str): 
+        return encrypted_value
+    
+    if encrypted_value.startswith(self.start_tag) and encrypted_value.endswith(self.end_tag):
+        encrypted_value = self.rem_tags(encrypted_value)[0]
+    if not encrypted_value.endswith(&#34;=&#34;):
+        encrypted_value = encrypted_value + &#34;=&#34;
+    
+    return AESCipher(self.encryption_password).decrypt(encrypted_value)</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_csv_filecontent"><code class="name flex">
+<span>def <span class="ident">decrypt_csv_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt_csv_filecontent(self, filepath: str):
+
+    # TODO - handle big csv&#39;s
+    df = pd.read_csv(filepath) 
+
+    for col in self.columns:
+        if col not in df.columns: continue
+        
+        decryption_dict = {}
+        for val in df[col].unique():
+            decryption_dict[val] = self.decrypt(val)
+            
+        df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+    df.to_csv(filepath, index=False)
+
+    return filepath</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_excel_filecontent"><code class="name flex">
+<span>def <span class="ident">decrypt_excel_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt_excel_filecontent(self, filepath: str):
+
+    decrypted_dfs = {}
+    excel = pd.ExcelFile(filepath)
+    for sheet_name in excel.sheet_names:
+        
+        df = pd.read_excel(excel, sheet_name) 
+        
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            decryption_dict = {}
+            for val in df[col].unique():
+                decryption_dict[val] = self.decrypt(val)
+                
+            df[col] = df[col].apply(lambda cell: decryption_dict[cell] if cell in decryption_dict else cell)
+
+        decrypted_dfs[sheet_name] = df
+
+    writer = pd.ExcelWriter(filepath)
+    for name, df in decrypted_dfs.items():
+        df.to_excel(writer, sheet_name=name, index=False)
+    writer.save()
+    writer.close()
+
+    return filepath</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filecontent"><code class="name flex">
+<span>def <span class="ident">decrypt_filecontent</span></span>(<span>self, filepaths: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt_filecontent(self, filepaths: List[str]):
+
+    for fp in filepaths:
+        if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+            self.decrypt_non_excel_filecontent(fp)
+        elif fp.endswith(&#39;.csv&#39;) and self.columns:
+            self.decrypt_csv_filecontent(fp)
+        elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+            self.decrypt_excel_filecontent(fp)
+
+    return filepaths</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filepath"><code class="name flex">
+<span>def <span class="ident">decrypt_filepath</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt_filepath(self, filepath: str):
+
+    enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), filepath)
+
+    encdec = {}
+    for encval in enc_values:
+        encdec[self.add_tags(encval)] = self.decrypt(encval)
+        
+    decfp = filepath
+    for enc, dec in encdec.items():
+        decfp = decfp.replace(enc, dec)
+
+    return decfp</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_non_excel_filecontent"><code class="name flex">
+<span>def <span class="ident">decrypt_non_excel_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def decrypt_non_excel_filecontent(self, filepath: str):
+
+    with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+        content = f.read()
+
+    enc_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), content)
+
+    encdec = {}
+    for encval in enc_values:
+        encdec[self.add_tags(encval)] = self.decrypt(encval)
+
+    for encval, val in encdec.items():
+        content = re.sub(encval, val, content)
+
+    with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+        f.write(content)
+
+    return content</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt"><code class="name flex">
+<span>def <span class="ident">encrypt</span></span>(<span>self, value: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt(self, value:str):
+    return self.add_tags(AESCipher(self.encryption_password).encrypt(str(value)))</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_csv_filecontent"><code class="name flex">
+<span>def <span class="ident">encrypt_csv_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt_csv_filecontent(self,  filepath: str):
+    
+    # TODO - handle big csv&#39;s
+    df = pd.read_csv(filepath) 
+
+    for col in self.columns:
+        if col not in df.columns: continue
+        
+        encryption_dict = {}
+        for val in df[col].unique():
+            encryption_dict[val] = self.encrypt(val)
+            
+        df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+    df.to_csv(filepath, index=False)
+
+    return filepath</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_excel_filecontent"><code class="name flex">
+<span>def <span class="ident">encrypt_excel_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt_excel_filecontent(self, filepath: str):
+
+    encrypted_dfs = {}
+    excel = pd.ExcelFile(filepath)
+    for sheet_name in excel.sheet_names:
+        
+        df = pd.read_excel(excel, sheet_name) 
+        
+        for col in self.columns:
+            if col not in df.columns: continue
+            
+            encryption_dict = {}
+            for val in df[col].unique():
+                encryption_dict[val] = self.encrypt(val)
+
+            df[col] = df[col].apply(lambda cell: encryption_dict[cell] if cell in encryption_dict else cell)
+
+        encrypted_dfs[sheet_name] = df
+
+    writer = pd.ExcelWriter(filepath)
+    for name, df in encrypted_dfs.items():
+        df.to_excel(writer, sheet_name=name, index=False)
+    writer.save()
+    writer.close()
+
+    return filepath</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filecontent"><code class="name flex">
+<span>def <span class="ident">encrypt_filecontent</span></span>(<span>self, filepaths: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt_filecontent(self, filepaths: List[str]):
+
+    for fp in filepaths:
+        if fp.endswith((&#39;.txt&#39;, &#39;.xml&#39;, &#39;.csv&#39;, )):
+            self.encrypt_non_excel_filecontent(fp)
+        elif fp.endswith((&#39;.xls&#39;, &#39;.xlsx&#39;, )) and self.columns:
+            self.encrypt_excel_filecontent(fp)
+        elif fp.endswith(&#39;.csv&#39;) and self.columns:
+            self.encrypt_csv_filecontent(fp)
+
+    return filepaths</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filepath"><code class="name flex">
+<span>def <span class="ident">encrypt_filepath</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt_filepath(self, filepath: str):
+
+    if self.store is None: 
+        self.store = {}
+
+    encfp = filepath
+    for regexpr in self.filepaths:
+        values_to_encrypt = set(re.findall(re.compile(regexpr), encfp))            
+        for val in values_to_encrypt:
+            
+            if val not in self.store:
+
+                encrypted = self.encrypt(val)
+                encfp = encfp.replace(val, encrypted)
+
+                self.store[val] = {
+                    &#39;regexpr&#39;: regexpr,
+                    &#39;not_encrypted&#39;: val,
+                    &#39;encrypted&#39;: encrypted
+                }
+
+            else:
+                encfp = encfp.replace(val,  self.store[val][&#39;encrypted&#39;])
+
+    return encfp</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_non_excel_filecontent"><code class="name flex">
+<span>def <span class="ident">encrypt_non_excel_filecontent</span></span>(<span>self, filepath: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def encrypt_non_excel_filecontent(self, filepath: str):
+
+    with open(filepath, &#39;r&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+        content = f.read()
+
+    to_encrypt_values = set()
+    for regexp in self.filecontent:
+        matches = re.findall(re.compile(regexp), content)
+        if not matches: continue
+        to_encrypt_values.add(*matches)
+        
+    encryption_dict = {}
+    for tev in to_encrypt_values:
+        encryption_dict[tev] = self.encrypt(tev)
+
+    for val, encval in encryption_dict.items():
+        content = re.sub(val, encval, content)
+
+    with open(filepath, &#39;w&#39;, encoding=&#34;utf-8&#34;, errors=&#34;ignore&#34;) as f:
+        f.write(content)
+
+    return content</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_decrypted_filepaths"><code class="name flex">
+<span>def <span class="ident">get_decrypted_filepaths</span></span>(<span>self, filepaths: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_decrypted_filepaths(self, filepaths: List[str]):
+
+    decrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;decrypt&#39;)
+    decrypted_filepaths_list = self.mirror_dirs(decrypted_filepaths_dict, &#39;decrypt&#39;)
+    self.decrypt_filecontent(decrypted_filepaths_list)
+
+    return decrypted_filepaths_list</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encrypted_filepaths"><code class="name flex">
+<span>def <span class="ident">get_encrypted_filepaths</span></span>(<span>self, filepaths: List[str])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_encrypted_filepaths(self, filepaths: List[str]):
+
+    encrypted_filepaths_dict = self.get_src_dst_files(filepaths, &#39;encrypt&#39;)
+    encrypted_filepaths_list = self.mirror_dirs(encrypted_filepaths_dict, &#39;encrypt&#39;)
+    self.encrypt_filecontent(encrypted_filepaths_list)
+
+    return encrypted_filepaths_list</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encryption_parameters"><code class="name flex">
+<span>def <span class="ident">get_encryption_parameters</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_encryption_parameters(self):
+    return dict(
+        filepaths = self.filepaths,
+        filecontent = self.filecontent,
+        columns = self.columns
+    )</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_src_dst_files"><code class="name flex">
+<span>def <span class="ident">get_src_dst_files</span></span>(<span>self, filepaths: List[str], enctype: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_src_dst_files(self, filepaths: List[str], enctype: str):
+
+    assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+    self.store = {}
+
+    encdecfunc = lambda fp: self.encrypt_filepath(fp) if enctype == &#34;encrypt&#34; else self.decrypt_filepath(fp)
+
+    filepaths_dict = {}
+    for fp in filepaths:
+        if not os.path.exists(fp): continue
+        filepaths_dict[fp] = encdecfunc(fp)
+
+    self.store = None
+
+    return filepaths_dict</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.mirror_dirs"><code class="name flex">
+<span>def <span class="ident">mirror_dirs</span></span>(<span>self, filepaths_dict: Dict[str, str], enctype: str) ‑> List[str]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def mirror_dirs(self, filepaths_dict: Dict[str, str], enctype: str) -&gt; List[str]:
+
+    assert enctype in [&#34;encrypt&#34;, &#34;decrypt&#34;]
+
+    processed_filepaths = []
+    for sourcepath, destinationpath in filepaths_dict.items():
+
+        dstdir = os.path.join(envs.FILE_UPLOAD_PATH, f&#34;{enctype}ed&#34;)
+
+        dstpathli = [dstdir] + destinationpath.replace(envs.FILE_UPLOAD_PATH, &#34;&#34;).split(os.path.sep)[1:]
+        dstpath = os.path.join(*dstpathli)
+
+        root_path = os.path.dirname(dstpath)
+        if not os.path.exists(root_path):
+            os.makedirs(root_path)
+
+        shutil.copy2(sourcepath, dstpath)
+        processed_filepaths.append(dstpath)
+
+    return processed_filepaths</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.rem_tags"><code class="name flex">
+<span>def <span class="ident">rem_tags</span></span>(<span>self, value: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rem_tags(self, value: str):
+    no_tags_values = re.findall(re.compile(f&#34;{self.start_tag}(.*?){self.end_tag}&#34;), value)
+    return no_tags_values</code></pre>
+</details>
+</dd>
+<dt id="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.set_password"><code class="name flex">
+<span>def <span class="ident">set_password</span></span>(<span>self, password: str)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_password(self, password: str):
+    self.encryption_password = password</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="licenseware.uploader_encryptor" href="index.html">licenseware.uploader_encryptor</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor">UploaderEncryptor</a></code></h4>
+<ul class="">
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.add_tags" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.add_tags">add_tags</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt">decrypt</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_csv_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_csv_filecontent">decrypt_csv_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_excel_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_excel_filecontent">decrypt_excel_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filecontent">decrypt_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filepath" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_filepath">decrypt_filepath</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_non_excel_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.decrypt_non_excel_filecontent">decrypt_non_excel_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt">encrypt</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_csv_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_csv_filecontent">encrypt_csv_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_excel_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_excel_filecontent">encrypt_excel_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filecontent">encrypt_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filepath" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_filepath">encrypt_filepath</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_non_excel_filecontent" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.encrypt_non_excel_filecontent">encrypt_non_excel_filecontent</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_decrypted_filepaths" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_decrypted_filepaths">get_decrypted_filepaths</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encrypted_filepaths" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encrypted_filepaths">get_encrypted_filepaths</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encryption_parameters" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_encryption_parameters">get_encryption_parameters</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_src_dst_files" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.get_src_dst_files">get_src_dst_files</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.mirror_dirs" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.mirror_dirs">mirror_dirs</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.rem_tags" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.rem_tags">rem_tags</a></code></li>
+<li><code><a title="licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.set_password" href="#licenseware.uploader_encryptor.uploader_encryptor.UploaderEncryptor.set_password">set_password</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
